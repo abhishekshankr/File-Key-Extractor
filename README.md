@@ -1,40 +1,37 @@
-Below are the steps to get your plugin running. You can also find instructions at:
+<h1>
+File Key Extractor 
+</h1>
 
-  https://www.figma.com/plugin-docs/plugin-quickstart-guide/
+File Key Extractor is a plugin to extract information from Figma URLs without having to do it manually. Specifically, it parses the URLs and retrieves the File Key and Node ID, allowing users to directly access specific elements and files in their Figma projects with LLMs using LangChain.
 
-This plugin template uses Typescript and NPM, two standard tools in creating JavaScript applications.
+<h2>
+How to Use
+</h2>
 
-First, download Node.js which comes with NPM. This will allow you to install TypeScript and other
-libraries. You can find the download link here:
+Copy the Figma URL that you want to parse. The URL can be obtained from the browser or by clicking on the "Share" button and then selecting the "Copy Link" option.
 
-  https://nodejs.org/en/download/
 
-Next, install TypeScript using the command:
 
-  npm install -g typescript
+The link should be to a file in Figma or Figjam and must come from 'figma.com'.
 
-Finally, in the directory of your plugin, get the latest type definitions for the plugin API by running:
+It would look something like: <b>"https://www.figma.com/file/some_file_key/somename?type=design&node-id=some_node_id&mode=design&t=MvsdfdfnacmVx-1". </b>
 
-  npm install --save-dev @figma/plugin-typings
 
-If you are familiar with JavaScript, TypeScript will look very familiar. In fact, valid JavaScript code
-is already valid Typescript code.
 
-TypeScript adds type annotations to variables. This allows code editors such as Visual Studio Code
-to provide information about the Figma API while you are writing code, as well as help catch bugs
-you previously didn't notice.
+However, the plugin will also accept URLs without the 'https://' or 'www'.
 
-For more information, visit https://www.typescriptlang.org/
 
-Using TypeScript requires a compiler to convert TypeScript (code.ts) into JavaScript (code.js)
-for the browser to run.
 
-We recommend writing TypeScript code using Visual Studio code:
+Paste the copied URL into the input field in the plugin and click on the "Parse URL" button. The plugin will then parse the URL and display the 'File Key' and 'Node ID' in separate input fields.
 
-1. Download Visual Studio Code if you haven't already: https://code.visualstudio.com/.
-2. Open this directory in Visual Studio Code.
-3. Compile TypeScript to JavaScript: Run the "Terminal > Run Build Task..." menu item,
-    then select "npm: watch". You will have to do this again every time
-    you reopen Visual Studio Code.
 
-That's it! Visual Studio Code will regenerate the JavaScript file every time you save.
+
+Click the corresponding copy button next to each field to copy the values to your clipboard.
+
+
+<b>
+Note: Each time a new URL is parsed, the previous messages will disappear. If the URL entered is not from 'figma.com', an error message will be displayed.
+</b>
+
+
+This tool is a quick and efficient way to extract critical identifiers from your Figma URLs, saving time and reducing the potential for errors.
